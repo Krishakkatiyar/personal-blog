@@ -1,0 +1,17 @@
+<%- include('header.ejs'); %>
+    <h1>Home</h1>
+    <p>
+        <%= homeContent %>
+    </p>
+
+
+    <% post.forEach(function(post){  %>
+        <H2>
+            <%= post.title %>
+        </H2>
+        <P>
+            <%= post.content.substring(1,60) + "...." %>
+                <a href="/post/<%= post._id %>">Readmore</a>
+        </P>
+        <% }); %>
+            <%- include("../views/footer.ejs") %>
